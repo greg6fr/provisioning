@@ -1,0 +1,8 @@
+aws_region         = "eu-west-3"
+key_name           = "mykey"
+public_key_path    = "~/.ssh/mykey.pub"
+private_key_path   = "~/.ssh/mykey.pem"
+security_group_name = "app_sg"
+ami_id             = "ami-0c45f766e099f6f4e"
+instance_type      = "t2.medium"
+ssh_user           = "debian"

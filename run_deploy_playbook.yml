@@ -1,0 +1,15 @@
+- name: Exécuter le script de déploiement Terraform
+  hosts: localhost
+  become: false
+  tasks:
+    - name: Rendre le script exécutable
+      file:
+        path: ./deploy.sh
+        mode: '0755'
+        state: file
+
+    - name: Exécuter le script deploy.sh
+      command: ./deploy.sh
+      environment:
+        TF_VAR_aws_region: eu-west-3
+        TF_IN_AUTOMATION: true
