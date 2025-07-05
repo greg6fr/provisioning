@@ -3,21 +3,3 @@
   become: true
   roles:
     - tools_install
-
-- name: Déployer l'infrastructure Terraform (en local)
-  hosts: localhost
-  gather_facts: false
-  tasks:
-    - name: Rendre le script deploy.sh exécutable
-      file:
-        path: ../deploy.sh
-        mode: '0755'
-        state: file
-
-    - name: Exécuter deploy.sh
-      command: ../deploy.sh
-      args:
-        chdir: ..
-      environment:
-        TF_VAR_aws_region: eu-west-3
-        TF_IN_AUTOMATION: true

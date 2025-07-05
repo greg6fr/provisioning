@@ -4,7 +4,7 @@ provider "aws" {
 
 resource "aws_key_pair" "deployer" {
   key_name   = var.key_name
-  public_key = file(var.public_key_path)
+  public_key = file("${path.module}/${var.public_key_path}")
 }
 
 resource "aws_security_group" "app_sg" {
@@ -31,7 +31,10 @@ resource "aws_instance" "devops_vm" {
   instance_type          = var.instance_type
   key_name               = aws_key_pair.deployer.key_name
   vpc_security_group_ids = [aws_security_group.app_sg.id]
-
+  tags = {
+  Name = "jenkins-server"
+  Environment = "dev" 
+}
   provisioner "local-exec" {
     command = "bash provision.sh ${self.public_ip} ${var.ssh_user} ${var.private_key_path}"
   }

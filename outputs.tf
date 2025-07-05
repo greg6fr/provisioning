@@ -5,5 +5,5 @@ output "instance_public_ip" {
 
 output "ssh_connection" {
   description = "Commande SSH pour te connecter à l'instance"
-  value       = "ssh -i ~/.ssh/mykey.pem admin@${aws_instance.devops_vm.public_ip}"
+  value       = "ssh -i ~/provisioning/mykeyterraform.pem admin@${aws_instance.devops_vm.public_ip}"
 }
