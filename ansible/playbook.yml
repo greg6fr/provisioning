@@ -16,6 +16,8 @@
 
     - name: Exécuter deploy.sh
       command: ../deploy.sh
+      args:
+        chdir: ..
       environment:
         TF_VAR_aws_region: eu-west-3
         TF_IN_AUTOMATION: true

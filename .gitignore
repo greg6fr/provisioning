@@ -93,11 +93,11 @@ venv.bak/
 *.iml
 .idea/
 
-Architecture.png
-Commande.png
-Flux_Execution.png
-Makefile.png    
-Command.txt
-Makefile
-mykey.pem
-mykey.pub
+/Architecture.png
+/Commande.png
+/Flux_Execution.png
+/Makefile.png    
+/Command.txt
+/Makefile
+/mykey.pem
+/mykey.pub
