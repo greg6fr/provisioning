@@ -1,4 +1,5 @@
 
+ssh-keygen -y -f mykey.pem > mykey.pub
 chmod +x provision.sh
 
 
